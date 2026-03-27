@@ -13,12 +13,15 @@
       font-family: 'Playfair Display', serif;
       background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f') no-repeat center center/cover;
       color: #2c2c2c;
+      overflow: hidden;
     }
 
     .overlay {
       background: rgba(255, 255, 255, 0.88);
       width: 100%;
       height: 100vh;
+      position: relative;
+      overflow: hidden;
     }
 
     /* Intro */
@@ -49,12 +52,15 @@
       }
     }
 
+    /* Carta */
     .container {
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100vh;
       padding: 20px;
+      position: relative;
+      z-index: 2;
     }
 
     .card {
@@ -71,10 +77,8 @@
       font-size: 42px;
       color: #8b0000;
       margin-bottom: 30px;
-      font-family: 'Playfair Display', serif;
     }
 
-    /* 👇 ESTA ES LA CLAVE: nueva fuente para el mensaje */
     p {
       font-size: 24px;
       line-height: 1.9;
@@ -89,6 +93,21 @@
       font-size: 24px;
       font-family: 'Dancing Script', cursive;
     }
+
+    /* 🌹 Rosas cayendo */
+    .rose {
+      position: absolute;
+      top: -50px;
+      font-size: 24px;
+      animation: fall linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh);
+      }
+    }
   </style>
 </head>
 
@@ -100,7 +119,8 @@
     </h1>
   </div>
 
-  <div class="overlay">
+  <div class="overlay" id="roses-container">
+
     <div class="container">
       <div class="card">
 
@@ -125,7 +145,25 @@
 
       </div>
     </div>
+
   </div>
+
+  <!-- Script rosas -->
+  <script>
+    const container = document.getElementById('roses-container');
+
+    for (let i = 0; i < 25; i++) {
+      const rose = document.createElement('div');
+      rose.classList.add('rose');
+      rose.innerHTML = '🌹';
+
+      rose.style.left = Math.random() * 100 + 'vw';
+      rose.style.animationDuration = (5 + Math.random() * 5) + 's';
+      rose.style.fontSize = (20 + Math.random() * 20) + 'px';
+
+      container.appendChild(rose);
+    }
+  </script>
 
 </body>
 </html>
