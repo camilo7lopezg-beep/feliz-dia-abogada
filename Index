@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para ti 🤍</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #1c1c1c, #3a2c2c);
+      color: white;
+      overflow: hidden;
+    }
+
+    /* Pantalla inicial */
+    #intro {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: black;
+      z-index: 10;
+      animation: fadeOut 2s ease 4s forwards;
+    }
+
+    #intro h1 {
+      font-size: 24px;
+      font-weight: normal;
+      padding: 20px;
+    }
+
+    @keyframes fadeOut {
+      to {
+        opacity: 0;
+        visibility: hidden;
+      }
+    }
+
+    /* Carta */
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fdfaf6;
+      color: #2c2c2c;
+      max-width: 600px;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.5);
+      border-left: 8px solid #8b0000;
+    }
+
+    h2 {
+      text-align: center;
+      color: #8b0000;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .firma {
+      margin-top: 30px;
+      text-align: right;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Pantalla inicial -->
+  <div id="intro">
+    <h1>
+      This is a faqin surprise for someone too faqin special for me 🤍
+    </h1>
+  </div>
+
+  <!-- Carta -->
+  <div class="container">
+    <div class="card">
+      <h2>Feliz Día ⚖️🤍</h2>
+
+      <p>
+        Feliz día de la mejor y más increíble abogada. Amo tu carrera porque te amo a ti.
+      </p>
+
+      <p>
+        Sé que esto del día del X no significa mucho para ti jajaja, pero no me importa.
+        Para mí eres la mejor abogada del universo y quise hacerte esta cartita.
+      </p>
+
+      <p>
+        Te amo y que pases un día precioso.
+      </p>
+
+      <div class="firma">
+        Con amor 🤍
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
